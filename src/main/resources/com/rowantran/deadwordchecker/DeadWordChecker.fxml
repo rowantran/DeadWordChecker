@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.rowantran.deadwordchecker.DeadWordCheckerController"
+            prefHeight="300.0" prefWidth="250.0" alignment="CENTER">
+
+    <TextArea fx:id="essay" promptText="Paste essay here..." wrapText="true"/>
+
+    <Button fx:id="checkEssay" text="Check essay" onAction="#handleCheckEssay"/>
+
+</VBox>

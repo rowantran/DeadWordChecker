@@ -1,15 +1,14 @@
 package com.rowantran.deadwordchecker;
 
 import javafx.application.*;
-import javafx.event.*;
-import javafx.geometry.Pos;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.*;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,34 +19,22 @@ public class DeadWordChecker extends Application {
     private static String[] DEAD_WORDS;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/rowantran/deadwordchecker/DeadWordChecker.fxml"));
+
         primaryStage.setTitle("Dead Word Checker");
-
-        VBox root = new VBox();
-        root.setAlignment(Pos.CENTER);
-
-        TextArea essay = new TextArea();
-        essay.setPromptText("Paste essay here...");
-        essay.setWrapText(true);
-        root.getChildren().add(essay);
-
-        Button checkEssay = new Button();
-        checkEssay.setText("Check essay");
-        checkEssay.setOnAction(event -> scanEssay(essay.getText()));
-        root.getChildren().add(checkEssay);
-
         primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
         root.requestFocus();
     }
 
     public static void main(String[] args) {
-        DEAD_WORDS = readStringArray("deadwords.txt");
+        DEAD_WORDS = readStringArray("/com/rowantran/deadwordchecker/deadwords.txt");
 
         launch(args);
     }
 
-    private void scanEssay(String essay) {
+    static void scanEssay(String essay) {
         String results = "";
         for (String search : DEAD_WORDS) {
             Pattern p = Pattern.compile("\\b" + search + "\\b");
@@ -79,7 +66,7 @@ public class DeadWordChecker extends Application {
 
     private static String[] readStringArray(String filename) {
         List<String> words = new ArrayList<>();
-        Scanner scan = new Scanner(DeadWordChecker.class.getClassLoader().getResourceAsStream(filename));
+        Scanner scan = new Scanner(DeadWordChecker.class.getResourceAsStream(filename));
 
         while (scan.hasNext()) {
             words.add(scan.nextLine());
