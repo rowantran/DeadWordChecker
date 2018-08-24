@@ -6,8 +6,6 @@ import javafx.application.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.*;
 
 import java.io.IOException;
@@ -27,26 +25,25 @@ public class DeadWordChecker extends Application {
         primaryStage.setTitle("Dead Word Checker");
         primaryStage.setScene(new Scene(essayEntryView, 300, 250));
         primaryStage.show();
-        essayEntryView.requestFocus();
 
         EssayEntry essayEntry = loader.getController();
 
-        try {
-            FXMLLoader checkEssayLoader = new FXMLLoader();
-            checkEssayLoader.setLocation(getClass().getResource("/com/rowantran/deadwordchecker/view/CheckedEssay.fxml"));
-            Parent checkEssayView = checkEssayLoader.load();
+        FXMLLoader checkEssayLoader = new FXMLLoader();
+        checkEssayLoader.setLocation(getClass().getResource("/com/rowantran/deadwordchecker/view/CheckedEssay.fxml"));
+        Parent checkEssayView = checkEssayLoader.load();
 
-            Stage resultsStage = new Stage();
-            resultsStage.setTitle("Dead Words Scanning Results");
-            resultsStage.setScene(new Scene(checkEssayView, 400, 250));
-            resultsStage.show();
+        Stage resultsStage = new Stage();
+        resultsStage.setTitle("Dead Words Scanning Results");
+        resultsStage.setScene(new Scene(checkEssayView, 400, 250));
+        resultsStage.setX(primaryStage.getX() + primaryStage.getWidth());
+        resultsStage.setY(primaryStage.getY());
+        resultsStage.show();
 
-            CheckedEssay checkedEssay = checkEssayLoader.getController();
-            checkedEssay.bindText(essayEntry.essay.scannedEssay);
+        primaryStage.requestFocus();
+        essayEntryView.requestFocus();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        CheckedEssay checkedEssay = checkEssayLoader.getController();
+        checkedEssay.bindText(essayEntry.essay.scannedEssay);
     }
 
     public static void main(String[] args) {
