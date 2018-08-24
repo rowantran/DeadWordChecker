@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
 
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.rowantran.deadwordchecker.controller.EssayEntry"
-            prefHeight="300.0" prefWidth="250.0" alignment="CENTER">
+<SplitPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.rowantran.deadwordchecker.controller.EssayEntry"
+           prefWidth="800.0" prefHeight="520.0">
 
-    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true"/>
+    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true" onKeyPressed="#handleCheckEssay"
+        prefWidth="400.0" prefHeight="520.0" />
 
-    <Button text="Check essay" onAction="#handleCheckEssay"/>
+    <WebView fx:id="checkedEssay" prefWidth="400.0" prefHeight="520.0" />
 
-</VBox>
+</SplitPane>
