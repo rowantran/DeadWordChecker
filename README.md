@@ -4,8 +4,7 @@
 This application reads an essay and scans it for "dead words," i.e.
 overused or weak words/phrases, notifying the writer of all detected dead words.
 
-![Application main screen](https://i.imgur.com/1tYgaSh.png)
-![Results screen](https://i.imgur.com/FKdcmXq.png)
+![Application main screen](https://i.imgur.com/TtHwFxE.png)
 
 ## Downloads
 [Latest version hosted on Github](https://github.com/rowantran/DeadWordChecker/releases
