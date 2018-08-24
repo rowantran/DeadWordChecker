@@ -8,11 +8,11 @@
 
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.rowantran.deadwordchecker.DeadWordCheckerController"
+            fx:controller="com.rowantran.deadwordchecker.controller.EssayEntry"
             prefHeight="300.0" prefWidth="250.0" alignment="CENTER">
 
-    <TextArea fx:id="essay" promptText="Paste essay here..." wrapText="true"/>
+    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true"/>
 
-    <Button fx:id="checkEssay" text="Check essay" onAction="#handleCheckEssay"/>
+    <Button text="Check essay" onAction="#handleCheckEssay"/>
 
 </VBox>
