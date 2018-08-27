@@ -4,6 +4,7 @@ import javafx.application.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.*;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class DeadWordChecker extends Application {
         Parent essayEntryView = loader.load();
 
         primaryStage.setTitle("Dead Word Checker");
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/rowantran/deadwordchecker/img/icon.png")));
         primaryStage.setScene(new Scene(essayEntryView, 800, 520));
         primaryStage.setOnCloseRequest((WindowEvent e) -> Platform.exit());
         primaryStage.show();
