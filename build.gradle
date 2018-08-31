@@ -4,3 +4,31 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
+
+version "2.1"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'edu.sc.seis.gradle:launch4j:2.4.4'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'edu.sc.seis.launch4j'
+apply plugin: 'distribution'
+
+mainClassName = 'com.rowantran.deadwordchecker.app.DeadWordChecker'
+
+launch4j {
+    mainClassName = 'com.rowantran.deadwordchecker.app.DeadWordChecker'
+    icon = "${projectDir}/src/main/resources/com/rowantran/deadwordchecker/img/icon.ico"
+}
