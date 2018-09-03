@@ -7,7 +7,7 @@ overused or weak words/phrases, notifying the writer of all detected dead words.
 ![Application main screen](https://i.imgur.com/TtHwFxE.png)
 
 ## Downloads
-[Latest version hosted on Github](https://github.com/rowantran/DeadWordChecker/releases
+[Latest version hosted on Github](https://github.com/rowantran/DeadWordChecker/releases)
 
 ## Implementation
 The interface is implemented in JavaFX.
