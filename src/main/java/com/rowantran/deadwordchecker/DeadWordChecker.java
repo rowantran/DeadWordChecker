@@ -1,4 +1,4 @@
-package com.rowantran.deadwordchecker.app;
+package com.rowantran.deadwordchecker;
 
 import javafx.application.*;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +23,7 @@ public class DeadWordChecker extends Application {
 
         primaryStage.setTitle("Dead Word Checker");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/rowantran/deadwordchecker/img/icon.png")));
-        primaryStage.setScene(new Scene(essayEntryView, 800, 520));
+        primaryStage.setScene(new Scene(essayEntryView, 1000, 520));
         primaryStage.setOnCloseRequest((WindowEvent e) -> Platform.exit());
         primaryStage.show();
 
@@ -37,7 +37,7 @@ public class DeadWordChecker extends Application {
         launch(args);
     }
 
-    private static String[] readStringArray(String filename) {
+    public static String[] readStringArray(String filename) {
         List<String> words = new ArrayList<>();
         Scanner scan = new Scanner(DeadWordChecker.class.getResourceAsStream(filename));
 

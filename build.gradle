@@ -26,9 +26,9 @@ apply plugin: 'application'
 apply plugin: 'edu.sc.seis.launch4j'
 apply plugin: 'distribution'
 
-mainClassName = 'com.rowantran.deadwordchecker.app.DeadWordChecker'
+mainClassName = 'com.rowantran.deadwordchecker.DeadWordChecker'
 
 launch4j {
-    mainClassName = 'com.rowantran.deadwordchecker.app.DeadWordChecker'
+    mainClassName = 'com.rowantran.deadwordchecker.DeadWordChecker'
     icon = "${projectDir}/src/main/resources/com/rowantran/deadwordchecker/img/icon.ico"
 }

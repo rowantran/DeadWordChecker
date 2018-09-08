@@ -6,11 +6,13 @@
 <SplitPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="com.rowantran.deadwordchecker.controller.EssayEntry"
-           prefWidth="800.0" prefHeight="520.0">
+           prefWidth="1000.0" prefHeight="520.0">
 
-    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true" onKeyPressed="#handleCheckEssay"
-        prefWidth="400.0" prefHeight="520.0" />
+    <ListView fx:id="vocabListDisplay" prefWidth="200.0" prefHeight="520.0"/>
 
-    <WebView fx:id="checkedEssay" prefWidth="400.0" prefHeight="520.0" />
+    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true" onKeyReleased="#handleCheckEssay"
+        minWidth="400.0" prefHeight="520.0" />
+
+    <WebView fx:id="checkedEssay" minWidth="400.0" prefHeight="520.0" />
 
 </SplitPane>
