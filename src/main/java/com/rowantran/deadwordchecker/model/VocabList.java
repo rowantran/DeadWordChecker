@@ -12,10 +12,14 @@ public class VocabList {
     public VocabList(int unit) {
         list = new LinkedHashMap<>();
 
-        String filename = "/com/rowantran/deadwordchecker/vocablists/unit" + unit + ".txt";
-        String[] words = DeadWordChecker.readStringArray(filename);
-        for (String word : words) {
-            list.put(word, new SimpleBooleanProperty(false));
+        try {
+            String filename = "/com/rowantran/deadwordchecker/vocablists/unit" + unit + ".txt";
+            String[] words = DeadWordChecker.readStringArray(filename);
+            for (String word : words) {
+                list.put(word, new SimpleBooleanProperty(false));
+            }
+        } catch (NullPointerException e) {
+            list.put("List does not exist", new SimpleBooleanProperty(false));
         }
     }
 }
