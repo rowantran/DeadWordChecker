@@ -28,6 +28,14 @@ apply plugin: 'distribution'
 
 mainClassName = 'com.rowantran.deadwordchecker.DeadWordChecker'
 
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.rowantran.deadwordchecker.DeadWordChecker'
+        )
+    }
+}
+
 launch4j {
     mainClassName = 'com.rowantran.deadwordchecker.DeadWordChecker'
     icon = "${projectDir}/src/main/resources/com/rowantran/deadwordchecker/img/icon.ico"

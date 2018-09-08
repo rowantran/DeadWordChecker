@@ -10,7 +10,7 @@
 
     <ListView fx:id="vocabListDisplay" prefWidth="200.0" prefHeight="520.0"/>
 
-    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true" onKeyReleased="#handleCheckEssay"
+    <TextArea fx:id="essayText" promptText="Paste essay here..." wrapText="true" onKeyTyped="#handleCheckEssay"
         minWidth="400.0" prefHeight="520.0" />
 
     <WebView fx:id="checkedEssay" minWidth="400.0" prefHeight="520.0" />

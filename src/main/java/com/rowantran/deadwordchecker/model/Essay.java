@@ -32,7 +32,5 @@ public class Essay {
         for (String word : list.list.keySet()) {
             scannedEssay = scannedEssay.replaceAll("\\b" + word + "\\b", "<b>" + word + "</b>");
         }
-
-        System.out.println(scannedEssay);
     }
 }
