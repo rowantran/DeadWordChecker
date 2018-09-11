@@ -26,7 +26,7 @@ public class Essay {
 
         scannedEssay = essay;
         for (String search : DeadWordChecker.DEAD_WORDS) {
-            scannedEssay = scannedEssay.replaceAll("\\b" + search + "\\b", "<mark>" + search + "</mark>");
+            scannedEssay = scannedEssay.replaceAll("\\b" + search + "\\b(?! \\w+ing\\b)", "<mark>" + search + "</mark>");
         }
 
         for (String word : list.list.keySet()) {
